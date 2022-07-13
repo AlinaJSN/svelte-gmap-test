@@ -1,0 +1,24 @@
+{
+  "name": "gmaps-svelte-test",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "r:build": "rollup -c",
+    "r:dev": "NODE_ENV=development rollup -cw",
+    "lint": "eslint src"
+  },
+  "devDependencies": {
+    "@beyonk/async-script-loader": "^2.2.2",
+    "@bulatdashiev/svelte-slider": "^1.0.3",
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.30",
+    "eslint": "^7.15.0",
+    "eslint-plugin-svelte3": "^2.7.3",
+    "svelte": "^3.44.0",
+    "svelte-tooltip": "^1.2.0",
+    "vite": "^3.0.0"
+  }
+}
