@@ -31,6 +31,15 @@
   }
 </script>
 
+<svelte:head>
+	<title>Voolt: Show your add in right places</title>
+	<meta name="robots" content="noindex nofollow" />
+	<meta 
+     name='viewport' 
+     content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' 
+/>
+	<html lang="en" />
+</svelte:head>
 <header class="shadow">
   <div class="container">
     <div class="row">
