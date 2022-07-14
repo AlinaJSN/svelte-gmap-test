@@ -1,5 +1,8 @@
 <script>
-  import '@fontsource/plus-jakarta-sans'
+  import '@fontsource/plus-jakarta-sans/400.css'
+  import '@fontsource/plus-jakarta-sans/500.css'
+  import '@fontsource/plus-jakarta-sans/700.css'
+
   import '../assets/normalize.css'
   import '../assets/prettify.css'
   import '../assets/style.css'
@@ -19,10 +22,10 @@
 
   $: tip = `${radius[0]} km`
   $: {
-    console.log(`lat ${address.lat}, lng ${address.lng}`);
+    console.log(`lat ${address.lat}, lng ${address.lng}`)
   }
-  $: console.log(`address: ${viewValue}`);
-  $: console.log(`radius: ${radius[0]} km`);
+  $: console.log(`address: ${viewValue}`)
+  $: console.log(`radius: ${radius[0]} km`)
 
   function parseAddress(ev) {
     const { place } = ev.detail
@@ -34,13 +37,13 @@
 </script>
 
 <svelte:head>
-	<title>Voolt: Show your add in right places</title>
-	<meta name="robots" content="noindex nofollow" />
-	<meta 
-     name='viewport' 
-     content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' 
-/>
-	<html lang="en" />
+  <title>Voolt: Show your add in right places</title>
+  <meta name="robots" content="noindex nofollow" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+  />
+  <html lang="en" />
 </svelte:head>
 <header class="shadow">
   <div class="container">
@@ -164,7 +167,7 @@
             {apiKey}
             bind:lat={address.lat}
             bind:lng={address.lng}
-            bind:zoom={zoom}
+            bind:zoom
           >
             <GoogleMapMarker
               on:geocode={(e) => {
@@ -182,12 +185,10 @@
   <div class="container margin-top-80 xs-margin-top-40 margin-bottom-50">
     <div class="row">
       <div class="col-md-6 right padding-right-5">
-        <button class="btn white navi" type="button"
-          ><span>Back</span></button
-        >
+        <button class="btn white navi" type="button"><span>Back</span></button>
       </div>
       <div class="col-md-6 left padding-left-5">
-        <button class="btn yellow navi"  type="button"
+        <button class="btn yellow navi" type="button"
           ><span>Continue</span></button
         >
       </div>
