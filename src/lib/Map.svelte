@@ -1,6 +1,7 @@
 <script>
   import '@fontsource/plus-jakarta-sans/400.css'
   import '@fontsource/plus-jakarta-sans/500.css'
+  import '@fontsource/plus-jakarta-sans/600.css'
   import '@fontsource/plus-jakarta-sans/700.css'
 
   import '../assets/normalize.css'
@@ -37,7 +38,7 @@
 </script>
 
 <svelte:head>
-  <title>Voolt: Show your add in right places</title>
+  <title>Voolt: Show your ad in right places</title>
   <meta name="robots" content="noindex nofollow" />
   <meta
     name="viewport"
@@ -110,13 +111,13 @@
   </div>
 </header>
 <section class="content">
-  <h1 class="center hidden-xs margin-top-40">Show your add in right places</h1>
+  <h1 class="center hidden-xs margin-top-40">Show your ad in right places</h1>
   <div class="container card main" style="max-width: 860px">
     <div class="row">
       <div class="content-info col-md-6 col-lg-6 col-xs-12 md-padding-left-0">
         <div class="padding-left-15 padding-right-15" id="address-autocomplete">
           <h1 class="center shown-xs form-cap margin-top-40 xs-cap">
-            Show your add in right places
+            Show your ad in right places
           </h1>
           <form on:submit|preventDefault={() => ({})}>
             <label for={addressFieldId}>
@@ -246,7 +247,7 @@
     height: 380px;
   }
   .info-block {
-    margin-top: 85px;
+    margin-top: 75px;
   }
   .btn.navi {
     width: 180px;
