@@ -47,6 +47,7 @@
       lat: mrkr.getPosition().lat(),
       lng: mrkr.getPosition().lng(),
     })
+    console.log(`Dragging: lat ${mrkr.getPosition().lat()}, lng ${mrkr.getPosition().lng()}`)
   })
 
   mrkr.addListener('dragend', () => {
