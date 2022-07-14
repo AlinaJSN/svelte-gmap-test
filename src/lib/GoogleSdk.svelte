@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import loader from '@beyonk/async-script-loader'
   import { onMount, createEventDispatcher } from 'svelte'
   import { mapsLoaded, mapsLoading } from './stores.js'
@@ -10,8 +10,10 @@
   $: $mapsLoaded && dispatch('ready')
 
   onMount(() => {
+    // @ts-ignore
     window.byGmapsReady = () => {
       mapsLoaded.set(true)
+      // @ts-ignore
       delete window.byGmapsReady
     }
 
