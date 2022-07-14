@@ -15,8 +15,12 @@
   let radius = [15, 65]
   let radiusFieldId
   let viewValue = '32 Merchant str., Los Angeles, USA'
+  let zoom = 15
 
   $: tip = `${radius[0]} km`
+  $: {
+    console.log(`lat ${address.lat}, lng ${address.lng}, radius ${radius[0]}`);
+  }
 
   function parseAddress(ev) {
     const { place } = ev.detail
@@ -149,7 +153,7 @@
             {apiKey}
             bind:lat={address.lat}
             bind:lng={address.lng}
-            zoom={10}
+            bind:zoom={zoom}
           >
             <GoogleMapMarker
               on:geocode={(e) => {

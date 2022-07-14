@@ -17,7 +17,7 @@
 
   export let lat
   export let lng
-  export let zoom = 8
+  export let zoom
   export let options = {}
 
   $: {

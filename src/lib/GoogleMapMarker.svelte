@@ -17,6 +17,7 @@
 
   $: {
     crcl.setRadius(radius * 1000)
+    map.fitBounds(crcl.getBounds())
   }
 
   $: {
