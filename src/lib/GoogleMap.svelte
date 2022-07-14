@@ -66,6 +66,7 @@
           center: { lat, lng },
           zoom,
           disableDefaultUI: true,
+          // mapTypeId: "terrain", //satellite, hybrid and terrain
         },
         options
       ))

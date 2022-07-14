@@ -1,6 +1,6 @@
 <script>
   import { getContext, createEventDispatcher } from "svelte";
-
+  import icon from '../assets/marker_icon.png';
   import { key } from "./contexts.js";
 
   const dispatch = createEventDispatcher()
@@ -22,12 +22,19 @@
   }
 
   const geocoder = new window.google.maps.Geocoder();
+  const google = window.google;
+
+  var markerImage = new google.maps.MarkerImage(icon,
+                new google.maps.Size(56, 56),
+                new google.maps.Point(0, 0),
+                new google.maps.Point(28, 28));
 
   // eslint-disable-next-line no-new
   const mrkr = new window.google.maps.Marker({
     draggable: true,
     position: { lat, lng },
     map,
+    icon: markerImage,
   });
 
   mrkr.addListener("drag", () => {
@@ -51,11 +58,11 @@
 
   // eslint-disable-next-line no-new
   const crcl = new window.google.maps.Circle({
-    strokeColor: "#22a7f0",
-    strokeOpacity: 0.8,
+    strokeColor: "#0094FF",
+    strokeOpacity: 0.2,
     strokeWeight: 2,
-    fillColor: "#22a7f0",
-    fillOpacity: 0.35,
+    fillColor: "#0094FF",
+    fillOpacity: 0.2,
     map,
     center: { lat, lng },
     radius,
