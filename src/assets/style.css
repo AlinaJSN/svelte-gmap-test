@@ -260,6 +260,24 @@ section .container {
 .margin-top-50 {
   margin-top: 50px;
 }
+.margin-top-40 {
+  margin-top: 40px;
+}
+.margin-top-30 {
+  margin-top: 30px;
+}
+.margin-top-20 {
+  margin-top: 20px;
+}
+.margin-top-10 {
+  margin-top: 10px;
+}
+.margin-top-0 {
+  margin-top: 0;
+}
+.margin-bottom-40 {
+  margin-bottom: 40px;
+}
 .margin-bottom-50 {
   margin-bottom: 50px;
 }
@@ -479,9 +497,28 @@ header.shadow {
     box-shadow: none;
     border: none;
   }
+  button.btn.navi {
+    width: 160px!important;
+  }
+  h1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    /* identical to box height, or 140% */
+
+    text-align: center;
+    letter-spacing: -0.005em;
+    /* font-feature-settings: 'liga' off; */
+  }
+  .xs-margin-top-40 {
+    margin-top: 40px;
+  }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 356px) {
   button.btn.navi {
     width: 100%!important;
   }

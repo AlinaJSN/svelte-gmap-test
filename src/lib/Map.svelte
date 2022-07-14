@@ -112,7 +112,7 @@
     <div class="row">
       <div class="content-info col-md-6 col-lg-6 col-xs-12">
         <div class="padding-left-15 padding-right-15" id="address-autocomplete">
-          <h1 class="center shown-xs form-cap" style="margin-top: 40px">
+          <h1 class="center shown-xs form-cap margin-top-40">
             Show your add in right places
           </h1>
           <form on:submit|preventDefault={() => ({})}>
@@ -179,7 +179,7 @@
       </div>
     </div>
   </div>
-  <div class="container margin-top-80 margin-bottom-50">
+  <div class="container margin-top-80 xs-margin-top-40 margin-bottom-50">
     <div class="row">
       <div class="col-md-6 right padding-right-5">
         <button class="btn white navi" type="button"
