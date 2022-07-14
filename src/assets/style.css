@@ -499,6 +499,9 @@ header.shadow {
   }
   button.btn.navi {
     width: 160px!important;
+    height: 48px!important;
+    font-size: 15px!important;
+    line-height: 20px!important;
   }
   h1.xs-cap {
     margin-top: 20px;
