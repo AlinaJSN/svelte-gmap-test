@@ -13,8 +13,8 @@
   export let value = null
   export let viewValue = null
   export let viewLabel = 'formatted_address'
-  export let fields = ['geometry', viewLabel]
-  export let types = ['(regions)']
+  export let fields = [ 'geometry', viewLabel ]
+  export let types = [ '(regions)' ]
   export let options = {}
 
   let search
@@ -24,7 +24,7 @@
 
   const dispatch = createEventDispatcher()
 
-  export function clear() {
+  export function clear () {
     value = null
     viewValue = null
     currentPlace = null
@@ -32,31 +32,31 @@
     dispatch('clear')
   }
 
-  function dropdownVisible() {
+  function dropdownVisible () {
     return document.querySelectorAll('.pac-container')[0].offsetParent !== null
   }
 
-  function autocompleteKeydown(e) {
+  function autocompleteKeydown (e) {
     if (e.keyCode === 13 && dropdownVisible()) {
       e.preventDefault()
     }
   }
 
-  function blur() {
+  function blur () {
     dispatch('blur')
     if (viewValue !== (currentPlace && currentPlace[viewLabel])) {
       clear()
     }
   }
 
-  function initialise() {
+  function initialise () {
     const google = window.google
     autocomplete = new google.maps.places.Autocomplete(
       search,
       Object.assign(
         {
           fields,
-          types,
+          types
         },
         options
       )

@@ -5,7 +5,7 @@
 
   setContext(key, {
     getMap: () => map,
-    getGoogleMap: () => mapElement,
+    getGoogleMap: () => mapElement
   })
 
   const dispatch = createEventDispatcher()
@@ -24,27 +24,27 @@
     map && map.setCenter({ lat, lng })
   }
 
-  export function getDomBounds() {
+  export function getDomBounds () {
     return mapElement.getBoundingClientRect()
   }
 
-  export function getDefaultView() {
+  export function getDefaultView () {
     return mapElement.ownerDocument.defaultView
   }
 
-  export function setHeight(height) {
+  export function setHeight (height) {
     mapElement.style.height = height
   }
 
-  export function setMaxHeight(height) {
+  export function setMaxHeight (height) {
     mapElement.style.maxHeight = height
   }
 
-  export function setCentre(location) {
+  export function setCentre (location) {
     map.setCenter(location)
   }
 
-  function initialise() {
+  function initialise () {
     setTimeout(() => {
       // @ts-ignore
       const google = window.google
@@ -54,7 +54,7 @@
           {
             center: { lat, lng },
             zoom,
-            disableDefaultUI: true,
+            disableDefaultUI: true
             // mapTypeId: "terrain", //satellite, hybrid and terrain
           },
           options

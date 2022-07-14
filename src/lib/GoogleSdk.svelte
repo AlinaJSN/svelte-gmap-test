@@ -23,13 +23,13 @@
       const url = [
         '//maps.googleapis.com/maps/api/js?',
         apiKey ? `key=${apiKey}&` : '',
-        'libraries=places&callback=byGmapsReady',
+        'libraries=places&callback=byGmapsReady'
       ].join('')
 
       mapsLoading.set(true)
 
       loader(
-        [{ type: 'script', url }],
+        [ { type: 'script', url } ],
         () => {
           return $mapsLoaded
         },

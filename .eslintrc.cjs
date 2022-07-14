@@ -10,6 +10,7 @@ module.exports = {
   extends: [
     // then, enable whichever type-aware rules you want to use
     "eslint:recommended",
+    "@beyonk/eslint-config/svelte"
   ],
   ignorePatterns: ["dist/**/*", "**/vendor/*.js"],
   plugins: ["svelte3"],

@@ -8,17 +8,17 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint src",
+    "lint": "npx eslint \"{,!(node_modules|public)/**/}*.{js,svelte}\"",
     "fix": "npx eslint --fix \"{,!(node_modules|public)/**/}*.{js,svelte}\"",
     "format": "npx prettier --write \"{,!(node_modules|public)/**/}*.{js,svelte}\""
- 
   },
   "devDependencies": {
     "@beyonk/async-script-loader": "^2.2.2",
+    "@beyonk/eslint-config": "^7.0.2",
     "@bulatdashiev/svelte-slider": "^1.0.3",
     "@fontsource/plus-jakarta-sans": "^4.5.8",
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.30",
-    "eslint": "^7.15.0",
+    "eslint": "^8.19.0",
     "eslint-plugin-svelte3": "^2.7.3",
     "gh-pages": "^4.0.0",
     "prettier": "^2.7.1",

@@ -13,10 +13,10 @@
   import Slider from '@bulatdashiev/svelte-slider'
   import SvelteTooltip from 'svelte-tooltip'
 
-  let apiKey = 'AIzaSyB5HYrOwNUgeMxMWUx3QGp8fev-PWjFoYw'
+  const apiKey = 'AIzaSyB5HYrOwNUgeMxMWUx3QGp8fev-PWjFoYw'
   let address = { lat: 34.0352206, lng: -118.2434967 }
   let addressFieldId
-  let radius = [15, 65]
+  let radius = [ 15, 65 ]
   let radiusFieldId
   let viewValue = '32 Merchant str., Los Angeles, USA'
   let zoom = 15
@@ -28,11 +28,11 @@
   $: console.log(`address: ${viewValue}`)
   $: console.log(`radius: ${radius[0]} km`)
 
-  function parseAddress(ev) {
+  function parseAddress (ev) {
     const { place } = ev.detail
     address = {
       lat: place.geometry.location.lat(),
-      lng: place.geometry.location.lng(),
+      lng: place.geometry.location.lng()
     }
   }
 </script>
@@ -125,8 +125,8 @@
               <GooglePlacesAutocomplete
                 bind:id={addressFieldId}
                 {apiKey}
-                types={['geocode']}
-                fields={['address_component', 'geometry']}
+                types={[ 'geocode' ]}
+                fields={[ 'address_component', 'geometry' ]}
                 bind:viewValue
                 on:placeChanged={parseAddress}
                 placeholder="Search..."

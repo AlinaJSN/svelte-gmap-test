@@ -11,6 +11,8 @@
   export let lat
   export let lng
   export let radius
+  export let crcl
+  export let mrkr
 
   // @ts-ignore
   const google = window.google
@@ -27,7 +29,7 @@
 
   const geocoder = new google.maps.Geocoder()
 
-  var markerImage = new google.maps.MarkerImage(
+  const markerImage = new google.maps.MarkerImage(
     icon,
     new google.maps.Size(30, 30),
     new google.maps.Point(0, 0),
@@ -35,17 +37,17 @@
   )
 
   // eslint-disable-next-line no-new
-  const mrkr = new google.maps.Marker({
+  mrkr = new google.maps.Marker({
     draggable: true,
     position: { lat, lng },
     map,
-    icon: markerImage,
+    icon: markerImage
   })
 
   mrkr.addListener('drag', () => {
     crcl.setCenter({
       lat: mrkr.getPosition().lat(),
-      lng: mrkr.getPosition().lng(),
+      lng: mrkr.getPosition().lng()
     })
     console.log(`Dragging: lat ${mrkr.getPosition().lat()}, lng ${mrkr.getPosition().lng()}`)
   })
@@ -55,7 +57,7 @@
     lng = mrkr.position.lng()
     geocoder
       .geocode({
-        latLng: { lat, lng },
+        latLng: { lat, lng }
       })
       .then((results) => {
         dispatch('geocode', results)
@@ -63,7 +65,7 @@
   })
 
   // eslint-disable-next-line no-new
-  const crcl = new google.maps.Circle({
+  crcl = new google.maps.Circle({
     strokeColor: '#0094FF',
     strokeOpacity: 0.2,
     strokeWeight: 2,
@@ -71,6 +73,6 @@
     fillOpacity: 0.2,
     map,
     center: { lat, lng },
-    radius,
+    radius
   })
 </script>
