@@ -1,29 +1,29 @@
 <script>
-  import "@fontsource/plus-jakarta-sans";
-  import "../assets/normalize.css";
-  import "../assets/prettify.css";
-  import "../assets/style.css";
-  import GooglePlacesAutocomplete from "./GooglePlacesAutocomplete.svelte";
-  import GoogleMap from "./GoogleMap.svelte";
-  import GoogleMapMarker from "./GoogleMapMarker.svelte";
-  import Slider from "@bulatdashiev/svelte-slider";
-  import SvelteTooltip from "svelte-tooltip";
+  import '@fontsource/plus-jakarta-sans'
+  import '../assets/normalize.css'
+  import '../assets/prettify.css'
+  import '../assets/style.css'
+  import GooglePlacesAutocomplete from './GooglePlacesAutocomplete.svelte'
+  import GoogleMap from './GoogleMap.svelte'
+  import GoogleMapMarker from './GoogleMapMarker.svelte'
+  import Slider from '@bulatdashiev/svelte-slider'
+  import SvelteTooltip from 'svelte-tooltip'
 
-  let apiKey = "AIzaSyB5HYrOwNUgeMxMWUx3QGp8fev-PWjFoYw";
-  let address = { lat: 34.0352206, lng: -118.2434967 };
-  let addressFieldId;
-  let radius = [15, 65];
-  let radiusFieldId;
-  let viewValue = "32 Merchant str., Los Angeles, USA";
+  let apiKey = 'AIzaSyB5HYrOwNUgeMxMWUx3QGp8fev-PWjFoYw'
+  let address = { lat: 34.0352206, lng: -118.2434967 }
+  let addressFieldId
+  let radius = [15, 65]
+  let radiusFieldId
+  let viewValue = '32 Merchant str., Los Angeles, USA'
 
-  $: tip = `${radius[0]} km`;
+  $: tip = `${radius[0]} km`
 
   function parseAddress(ev) {
-    const { place } = ev.detail;
+    const { place } = ev.detail
     address = {
       lat: place.geometry.location.lat(),
       lng: place.geometry.location.lng(),
-    };
+    }
   }
 </script>
 
@@ -97,15 +97,17 @@
     <div class="row">
       <div class="content-info col-md-6 col-lg-6 col-xs-12">
         <div class="padding-left-15 padding-right-15" id="address-autocomplete">
-          <h1 class="center shown-xs form-cap" style="margin-top: 40px">Show your add in right places</h1>
+          <h1 class="center shown-xs form-cap" style="margin-top: 40px">
+            Show your add in right places
+          </h1>
           <form on:submit|preventDefault={() => ({})}>
             <label for={addressFieldId}>
               <span class="text-bold">Advertize near the address</span>
               <GooglePlacesAutocomplete
                 bind:id={addressFieldId}
                 {apiKey}
-                types={["geocode"]}
-                fields={["address_component", "geometry"]}
+                types={['geocode']}
+                fields={['address_component', 'geometry']}
                 bind:viewValue
                 on:placeChanged={parseAddress}
                 placeholder="Search..."
@@ -151,7 +153,7 @@
           >
             <GoogleMapMarker
               on:geocode={(e) => {
-                viewValue = e.detail.results[0].formatted_address;
+                viewValue = e.detail.results[0].formatted_address
               }}
               bind:lat={address.lat}
               bind:lng={address.lng}
@@ -227,7 +229,7 @@
     flex: 1;
     height: 380px;
   }
-  .info-block{
+  .info-block {
     margin-top: 85px;
   }
 </style>

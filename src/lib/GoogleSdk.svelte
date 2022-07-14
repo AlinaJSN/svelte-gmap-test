@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import loader from '@beyonk/async-script-loader'
   import { onMount, createEventDispatcher } from 'svelte'
   import { mapsLoaded, mapsLoading } from './stores.js'
@@ -6,7 +6,7 @@
   const dispatch = createEventDispatcher()
 
   export let apiKey
-  
+
   $: $mapsLoaded && dispatch('ready')
 
   onMount(() => {
@@ -23,16 +23,16 @@
       const url = [
         '//maps.googleapis.com/maps/api/js?',
         apiKey ? `key=${apiKey}&` : '',
-        'libraries=places&callback=byGmapsReady'
+        'libraries=places&callback=byGmapsReady',
       ].join('')
 
       mapsLoading.set(true)
 
       loader(
-        [
-          { type: 'script', url }
-        ],
-        () => { return $mapsLoaded },
+        [{ type: 'script', url }],
+        () => {
+          return $mapsLoaded
+        },
         () => {}
       )
     }

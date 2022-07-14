@@ -7,6 +7,11 @@ module.exports = {
     es6: true,
     browser: true,
   },
+  extends: [
+    // then, enable whichever type-aware rules you want to use
+    "eslint:recommended",
+  ],
+  ignorePatterns: ["dist/**/*", "**/vendor/*.js"],
   plugins: ["svelte3"],
   overrides: [
     {
