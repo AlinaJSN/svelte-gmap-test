@@ -107,12 +107,12 @@
   </div>
 </header>
 <section class="content">
-  <h1 class="center hidden-xs">Show your add in right places</h1>
+  <h1 class="center hidden-xs margin-top-40">Show your add in right places</h1>
   <div class="container card main" style="max-width: 860px">
     <div class="row">
-      <div class="content-info col-md-6 col-lg-6 col-xs-12">
+      <div class="content-info col-md-6 col-lg-6 col-xs-12 md-padding-left-0">
         <div class="padding-left-15 padding-right-15" id="address-autocomplete">
-          <h1 class="center shown-xs form-cap margin-top-40">
+          <h1 class="center shown-xs form-cap margin-top-40 xs-cap">
             Show your add in right places
           </h1>
           <form on:submit|preventDefault={() => ({})}>
@@ -248,6 +248,9 @@
     margin-top: 85px;
   }
   .btn.navi {
-    width: 180px;;
+    width: 180px;
+    height: 52px;
+    font-size: 16px;
+    line-height: 26px;
   }
 </style>

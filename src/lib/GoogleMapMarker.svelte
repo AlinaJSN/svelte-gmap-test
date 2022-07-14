@@ -1,6 +1,6 @@
 <script>
   import { getContext, createEventDispatcher } from 'svelte'
-  import icon from '../assets/marker_icon.png'
+  import icon from '../assets/marker_icon_sm.png'
   import { key } from './contexts.js'
 
   const dispatch = createEventDispatcher()
@@ -29,9 +29,9 @@
 
   var markerImage = new google.maps.MarkerImage(
     icon,
-    new google.maps.Size(56, 56),
+    new google.maps.Size(30, 30),
     new google.maps.Point(0, 0),
-    new google.maps.Point(28, 28)
+    new google.maps.Point(15, 15)
   )
 
   // eslint-disable-next-line no-new

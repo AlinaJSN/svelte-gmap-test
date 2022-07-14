@@ -500,7 +500,7 @@ header.shadow {
   button.btn.navi {
     width: 160px!important;
   }
-  h1 {
+  h1.xs-cap {
     margin-top: 20px;
     margin-bottom: 20px;
     font-style: normal;
@@ -516,6 +516,7 @@ header.shadow {
   .xs-margin-top-40 {
     margin-top: 40px;
   }
+
 }
 
 @media only screen and (max-width: 356px) {
@@ -569,6 +570,12 @@ header.shadow {
   }
   .col-md-1 {
     width: 8.33333333%;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .md-padding-left-0 {
+    padding-left: 0;
   }
 }
 
