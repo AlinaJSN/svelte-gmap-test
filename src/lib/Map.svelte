@@ -19,8 +19,10 @@
 
   $: tip = `${radius[0]} km`
   $: {
-    console.log(`lat ${address.lat}, lng ${address.lng}, radius ${radius[0]}`);
+    console.log(`lat ${address.lat}, lng ${address.lng}`);
   }
+  $: console.log(`address: ${viewValue}`);
+  $: console.log(`radius: ${radius[0]} km`);
 
   function parseAddress(ev) {
     const { place } = ev.detail
@@ -180,12 +182,12 @@
   <div class="container margin-top-80 margin-bottom-50">
     <div class="row">
       <div class="col-md-6 right padding-right-5">
-        <button class="btn white " style="width: 180px;" type="button"
+        <button class="btn white navi" type="button"
           ><span>Back</span></button
         >
       </div>
       <div class="col-md-6 left padding-left-5">
-        <button class="btn yellow" style="width: 180px;" type="button"
+        <button class="btn yellow navi"  type="button"
           ><span>Continue</span></button
         >
       </div>
@@ -244,5 +246,8 @@
   }
   .info-block {
     margin-top: 85px;
+  }
+  .btn.navi {
+    width: 180px;;
   }
 </style>

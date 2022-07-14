@@ -481,6 +481,12 @@ header.shadow {
   }
 }
 
+@media only screen and (max-width: 400px) {
+  button.btn.navi {
+    width: 100%!important;
+  }
+}
+
 @media only screen and (max-width: 1200px) {
   .hidden-lg {
     display: none;
