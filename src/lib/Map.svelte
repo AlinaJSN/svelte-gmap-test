@@ -28,6 +28,7 @@
     console.log(`lat ${address.lat}, lng ${address.lng}`)
   }
   $: console.log(`address: ${viewValue}`)
+  $: console.log(`radius: ${radius[0]} km`)
   function parseAddress (ev) {
     const { place } = ev.detail
     address = {
