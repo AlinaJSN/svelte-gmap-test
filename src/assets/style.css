@@ -744,3 +744,7 @@ header.shadow {
     padding-right: 16px;
   }
 }
+
+.gm-style-cc {
+  display: none;
+}
