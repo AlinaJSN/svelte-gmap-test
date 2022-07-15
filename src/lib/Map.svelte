@@ -113,7 +113,7 @@
   </div>
 </header>
 <section class="content">
-  <h1 class="center hidden-xs margin-top-40">Show your ad in right places</h1>
+  <h1 class="center hidden-xs margin-top-40">Show your ad in the right places</h1>
   <div class="container card main" style="max-width: 860px">
     <div class="row">
       <div class="content-info col-md-6 col-lg-6 col-xs-12 padding-left-24 padding-right-24">
