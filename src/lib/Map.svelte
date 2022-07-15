@@ -14,20 +14,20 @@
   import SvelteTooltip from 'svelte-tooltip'
 
   const apiKey = 'AIzaSyB5HYrOwNUgeMxMWUx3QGp8fev-PWjFoYw'
+  const mobileWidth = 414
   let address = { lat: 34.0352206, lng: -118.2434967 }
   let addressFieldId
   let radius = [ 15, 65 ]
   let radiusFieldId
   let viewValue = '32 Merchant str., Los Angeles, USA'
   let zoom = 15
+  let innerWidth
 
   $: tip = `${radius[0]} km`
   $: {
     console.log(`lat ${address.lat}, lng ${address.lng}`)
   }
   $: console.log(`address: ${viewValue}`)
-  $: console.log(`radius: ${radius[0]} km`)
-
   function parseAddress (ev) {
     const { place } = ev.detail
     address = {
@@ -38,7 +38,7 @@
 </script>
 
 <svelte:head>
-  <title>Voolt: Show your ad in right places</title>
+  <title>Voolt: Show your ad in the right places</title>
   <meta name="robots" content="noindex nofollow" />
   <meta
     name="viewport"
@@ -46,13 +46,15 @@
   />
   <html lang="en" />
 </svelte:head>
+
+<svelte:window bind:innerWidth={innerWidth} />
 <header class="shadow">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 col-md-12 col-xs-12 center">
         <svg
-          width="140"
-          height="42"
+          width={innerWidth <= mobileWidth ? 93.33 : 140}
+          height={innerWidth <= mobileWidth ? 28 : 42}
           viewBox="0 0 140 42"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -114,14 +116,14 @@
   <h1 class="center hidden-xs margin-top-40">Show your ad in right places</h1>
   <div class="container card main" style="max-width: 860px">
     <div class="row">
-      <div class="content-info col-md-6 col-lg-6 col-xs-12 md-padding-left-0">
-        <div class="padding-left-15 padding-right-15" id="address-autocomplete">
+      <div class="content-info col-md-6 col-lg-6 col-xs-12 padding-left-24 padding-right-24">
+        <div id="address-autocomplete" class="md-padding-left-16 md-padding-right-16">
           <h1 class="center shown-xs form-cap margin-top-40 xs-cap">
-            Show your ad in right places
+            Show your ad in the right places
           </h1>
           <form on:submit|preventDefault={() => ({})}>
             <label for={addressFieldId}>
-              <span class="text-bold">Advertize near the address</span>
+              <span class="text-bold">Advertise near an address</span>
               <GooglePlacesAutocomplete
                 bind:id={addressFieldId}
                 {apiKey}
@@ -153,10 +155,16 @@
                 </div>
               </Slider>
             </label>
-            <div class="info-block color-grey padding-left-8 padding-right-8">
-              Your ad shows to people in the locations you set up, and to people
-              interested in these locations.
-            </div>
+            {#if innerWidth <= mobileWidth}
+              <div class="info-block color-grey padding-left-8 padding-right-8">
+                Your ad shows to people in the locations you select
+              </div>
+            {:else}
+              <div class="info-block color-grey padding-left-8 padding-right-8">
+                Your ad shows to people in the locations you set up, and to people
+                interested in these locations.
+              </div>
+            {/if}
           </form>
         </div>
       </div>
@@ -206,10 +214,10 @@
 
   form label .legend {
     margin-bottom: -10px;
-    margin-left: 0px;
-    margin-right: 0px;
-    padding-right: 8px;
-    padding-left: 8px;
+    margin-left: 0;
+    margin-right: 0;
+    /*padding-right: 8px;*/
+    /*padding-left: 8px;*/
     display: flex;
   }
 
@@ -229,6 +237,7 @@
     letter-spacing: 0.1px;
     padding: 6px 12px 16px 8px;
   }
+
   .handler {
     background-color: #0094ff;
     border-radius: 20px;
@@ -246,9 +255,12 @@
     flex: 1;
     height: 380px;
   }
+
   .info-block {
+    font-size: 13px;
     margin-top: 75px;
   }
+
   .btn.navi {
     width: 180px;
     height: 52px;
